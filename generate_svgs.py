@@ -1,47 +1,49 @@
 # -*- coding: utf-8 -*-
 """
 Generates self-contained, GitHub-compatible, responsive, animated dark.svg and light.svg
-for Sunny More's GitHub Profile README.
+for Sunny More's GitHub Profile README using his authentic portrait with curly hair,
+sunglasses, and signature smile.
 """
 
 import os
 import xml.etree.ElementTree as ET
 
+# Authentic 33-line ASCII portrait generated directly from Sunny More's photo
+# Captures: curly hair, Wayfarer sunglasses, mustache, warm smile, open collar & chest badge
 ascii_art = [
-    '               ++*####*:::                  ',
-    '            :*#%%%%%%%%%%%#%#++             ',
-    '          +%%%%%%%%%%%%@@%%%%%%#:           ',
-    '          %%%@@@@@@%@@@@@@@@%%%%%%          ',
-    '       :#%%%%@@@@@@@@@@@@%%%%%@%%%%#:       ',
-    '       :%%%%@@@@@@@@@@@@%%%%%@@%@@%%#       ',
-    '        +@@@@@@@%%######%%%%@@@@@@@%%#      ',
-    '         +@@@@%#**++++++**##%%@@@@@@%%      ',
-    '          %@%@#*+++++++++***##%@@@@@%%+     ',
-    '          %@@%***++::::::++**##%@@@@%*      ',
-    '          #@%*****#*+:::+*######%@@@*       ',
-    '          *@#++**###**+*##**#***#@@*        ',
-    '           @*++******++*#**###***@#         ',
-    '          +*++::::+++:·:+*++++++*%*:        ',
-    '          +:++::::+:+++*+*+::+++*##+        ',
-    '          ·+*++::+:+****#*+::++**#*:        ',
-    '           +*++++*******###**+**##+         ',
-    '           ·:*+++**+++++********#+:         ',
-    '              *+++++++++++*****#:           ',
-    '              +***++:::+++*##*#+ :          ',
-    '               ###********###%+ :           ',
-    '              :**#%%%%#%%%%%##+::::         ',
-    '            .:+++**###########+:::::        ',
-    '           :***++++++****#****%*::::        ',
-    '      .·:+******++++++++*****####*+: ··     ',
-    ' ·:++**##********+++++++++**##*#####*+::    ',
-    '*######**********#*++++++*#############*++: ',
-    '#**#**#***********+**++++*#######**#*######*',
-    '**##***********###+****++#######**####%#####',
-    '*##*******##*###******%#*#*############%####',
-    '*##*******************###********######%%###',
-    '##*********************##******#########%###',
-    '#***********************#***#############%##',
-    '***::++.+:::+*************###########*##*#%#'
+    '                  %%%%%%%                     ',
+    '                %%%%%%%%%%%%                  ',
+    '              %%%%    %  %###%                ',
+    '             %%% % % %%%% %%%##               ',
+    '            %%%   %%%%%%%%%%%%#%              ',
+    '            % %%% %%%%%%%%%%%%%%              ',
+    '           %% % %%%%%@@%%%% %%%               ',
+    '            %  %###@@@@@@@@# %%               ',
+    '            @##@@@@#++:+++##+#                ',
+    '            @###@@@+:+:#::####                ',
+    '            @@##@  #+::+#+##+:#               ',
+    '            ##++++++:::::++:::@               ',
+    '            @#+::::++::+:::::+                ',
+    '            +:::::#::··:::··::                ',
+    '             ++::::::··:::··:                 ',
+    '               #::::::=====+                  ',
+    '               #++::=====:::+                 ',
+    '               #++++::::::::::+               ',
+    '             +············:··::·+             ',
+    '           +·::·········:::··::::·+           ',
+    '          ·::::······::::::·:::::::··+        ',
+    '        +·::::::·····::::::·:::::::::::·+     ',
+    '     +::········:::++++··+::·············::   ',
+    '   +:············::+++++++:················:+ ',
+    ' +:···············:+++++++···················+',
+    '+:·················++++++····················:',
+    '+···················+++++··++++++++···········',
+    ' +···················:·:···++++++++···········',
+    '  :···················:····++++++++···········',
+    '   +··················:····++++====··········+',
+    '    +:·····················+++++++=········:+ ',
+    '      :························:··:·······:   ',
+    '       +:·············:········:··:·····:+    '
 ]
 
 def make_ascii_svg_lines(x_center, y_start, dy):
@@ -132,7 +134,7 @@ def build_svg(theme="dark"):
         glow2 = "rgba(124, 58, 237, 0.08)"
         glow3 = "rgba(5, 150, 105, 0.08)"
 
-    ascii_tspans = make_ascii_svg_lines(x_center=232, y_start=118, dy=10.2)
+    ascii_tspans = make_ascii_svg_lines(x_center=232, y_start=120, dy=10.4)
     
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="1180" height="610" role="img" aria-label="Sunny More — Full-Stack Web Architect and Applied NLP Engineer Profile Banner">
   <defs>
@@ -173,7 +175,7 @@ def build_svg(theme="dark"):
       .sans {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }}
       .ascii-art {{
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-size: 8.6px;
+        font-size: 8.7px;
         letter-spacing: 1.4px;
         fill: {ascii_fill};
       }}
@@ -242,7 +244,7 @@ def build_svg(theme="dark"):
       <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="6s" repeatCount="indefinite" />
     </line>
 
-    <!-- The 34-line ASCII Art Portrait -->
+    <!-- The 33-line ASCII Art Portrait -->
     <text class="ascii-art" text-anchor="middle" xml:space="preserve">
 {ascii_tspans}
     </text>
@@ -486,8 +488,8 @@ if __name__ == "__main__":
     
     with open(r"c:\Users\sunny\Downloads\sun2004ny\dark.svg", "w", encoding="utf-8") as f:
         f.write(dark_svg)
-    print("Generated dark.svg successfully.")
+    print("Generated dark.svg successfully with authentic portrait.")
 
     with open(r"c:\Users\sunny\Downloads\sun2004ny\light.svg", "w", encoding="utf-8") as f:
         f.write(light_svg)
-    print("Generated light.svg successfully.")
+    print("Generated light.svg successfully with authentic portrait.")
