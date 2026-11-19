@@ -1,10 +1,8 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=20261120_hud" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/light.svg?v=20261120_hud" />
-  <img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=20261120_hud" alt="Sunny More — Full-Stack Web Architect and Applied NLP Engineer Profile Banner" width="100%" />
-</picture>
+<a href="https://github.com/sun2004ny">
+  <img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/hero-banner.jpg" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
+</a>
 
 <br /><br />
 
