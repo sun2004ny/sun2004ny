@@ -257,9 +257,13 @@ timeline
 
 ---
 
-## 📊 GitHub Analytics & Metrics
+## 📊 GitHub Telemetry & Pipeline Dashboard
 
 <div align="center">
+
+<img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/github-dashboard.jpg" alt="Sunny More — GitHub Telemetry & Pipeline Dashboard" width="100%" />
+
+<br /><br />
 
 <img src="https://github-readme-stats.vercel.app/api?username=sun2004ny&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Sunny's GitHub Stats" height="175" />
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sun2004ny&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="175" />
