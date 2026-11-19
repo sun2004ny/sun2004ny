@@ -1,49 +1,42 @@
 # -*- coding: utf-8 -*-
 """
 Generates self-contained, GitHub-compatible, responsive, animated dark.svg and light.svg
-for Sunny More's GitHub Profile README using his authentic portrait with curly hair,
-sunglasses, and signature smile.
+for Sunny More's GitHub Profile README.
+Ensures perfect frame containment with zero overlaps or clipping.
 """
 
 import os
 import xml.etree.ElementTree as ET
 
-# Authentic 33-line ASCII portrait generated directly from Sunny More's photo
-# Captures: curly hair, Wayfarer sunglasses, mustache, warm smile, open collar & chest badge
+# 26-line perfectly contained ASCII portrait of Sunny More
+# Captures: signature wavy/curly hair, Wayfarer sunglasses with specular glint, mustache, bright smile, open collar & shoulders
 ascii_art = [
-    '                  %%%%%%%                     ',
-    '                %%%%%%%%%%%%                  ',
-    '              %%%%    %  %###%                ',
-    '             %%% % % %%%% %%%##               ',
-    '            %%%   %%%%%%%%%%%%#%              ',
-    '            % %%% %%%%%%%%%%%%%%              ',
-    '           %% % %%%%%@@%%%% %%%               ',
-    '            %  %###@@@@@@@@# %%               ',
-    '            @##@@@@#++:+++##+#                ',
-    '            @###@@@+:+:#::####                ',
-    '            @@##@  #+::+#+##+:#               ',
-    '            ##++++++:::::++:::@               ',
-    '            @#+::::++::+:::::+                ',
-    '            +:::::#::··:::··::                ',
-    '             ++::::::··:::··:                 ',
-    '               #::::::=====+                  ',
-    '               #++::=====:::+                 ',
-    '               #++++::::::::::+               ',
-    '             +············:··::·+             ',
-    '           +·::·········:::··::::·+           ',
-    '          ·::::······::::::·:::::::··+        ',
-    '        +·::::::·····::::::·:::::::::::·+     ',
-    '     +::········:::++++··+::·············::   ',
-    '   +:············::+++++++:················:+ ',
-    ' +:···············:+++++++···················+',
-    '+:·················++++++····················:',
-    '+···················+++++··++++++++···········',
-    ' +···················:·:···++++++++···········',
-    '  :···················:····++++++++···········',
-    '   +··················:····++++====··········+',
-    '    +:·····················+++++++=········:+ ',
-    '      :························:··:·······:   ',
-    '       +:·············:········:··:·····:+    '
+    '                %%%%%%%%                ',
+    '              %%%%%  %%%%%%             ',
+    '            %%%%%   %%  %%##%           ',
+    '           %%% %% %%%%%%%%%%#%          ',
+    '          %%%%  %%%% %%%%%%%%%          ',
+    '          % %%%  %%%#  %  %%%%          ',
+    '          %   %###@@@@@@@# %%%          ',
+    '           @#@@@##+:::+++###@           ',
+    '           ###@@@#:+:+#:+##+@           ',
+    '          @###@  #+::+#+##+++           ',
+    '          @#+++++#+::::+++::#           ',
+    '           +::···::::::····:+           ',
+    '           :::::#::··::::·::+           ',
+    '             +:::+:===:===+             ',
+    '             #+:::::=====:#             ',
+    '              #++::::::::::+            ',
+    '            ++·············::·          ',
+    '           +···········::··:::·+        ',
+    '         +·::········::::··:::::·++     ',
+    '       +:·····::++++····+::········::+  ',
+    '    +::·······::++++++·++:·············:',
+    '  +::··········:+++++++++···············',
+    '+:··············+++++++++···············',
+    '··················::::::················',
+    '··················:::::·················',
+    ':··················:·:··················'
 ]
 
 def make_ascii_svg_lines(x_center, y_start, dy):
@@ -134,7 +127,8 @@ def build_svg(theme="dark"):
         glow2 = "rgba(124, 58, 237, 0.08)"
         glow3 = "rgba(5, 150, 105, 0.08)"
 
-    ascii_tspans = make_ascii_svg_lines(x_center=232, y_start=120, dy=10.4)
+    # Text lines for ASCII: 26 lines starting at y=70, dy=10.2 -> ends at 325px (box is 44 to 352)
+    ascii_tspans = make_ascii_svg_lines(x_center=197, y_start=72, dy=10.2)
     
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="1180" height="610" role="img" aria-label="Sunny More — Full-Stack Web Architect and Applied NLP Engineer Profile Banner">
   <defs>
@@ -175,8 +169,8 @@ def build_svg(theme="dark"):
       .sans {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }}
       .ascii-art {{
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-size: 8.7px;
-        letter-spacing: 1.4px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
         fill: {ascii_fill};
       }}
     </style>
@@ -234,29 +228,30 @@ def build_svg(theme="dark"):
     <text x="18" y="22" class="mono" font-size="11" font-weight="700" fill="{text_secondary}">[ VISUAL.MAP // PORTRAIT ]</text>
     <text x="375" y="22" class="mono" font-size="10" font-weight="600" fill="{accent_cyan}" text-anchor="end">ASCII_VECTOR</text>
 
-    <!-- ASCII Canvas Viewport Box -->
-    <rect x="16" y="44" width="363" height="364" rx="10" fill="{ascii_box_bg}" stroke="{ascii_box_border}" stroke-width="1" />
+    <!-- ASCII Canvas Viewport Box: 44 to 348 (height 304px) -->
+    <rect x="16" y="44" width="363" height="308" rx="10" fill="{ascii_box_bg}" stroke="{ascii_box_border}" stroke-width="1" />
     
-    <!-- Scanning Light Line Effect (SMIL) -->
+    <!-- Scanning Light Line Effect (Constrained within Box) -->
     <line x1="18" y1="46" x2="377" y2="46" stroke="{accent_cyan}" stroke-width="1.5" stroke-opacity="0.65">
-      <animate attributeName="y1" values="46;406;46" dur="6s" repeatCount="indefinite" />
-      <animate attributeName="y2" values="46;406;46" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="46;350;46" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="46;350;46" dur="6s" repeatCount="indefinite" />
       <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="6s" repeatCount="indefinite" />
     </line>
 
-    <!-- The 33-line ASCII Art Portrait -->
+    <!-- The 26-line Contained ASCII Art Portrait -->
     <text class="ascii-art" text-anchor="middle" xml:space="preserve">
 {ascii_tspans}
     </text>
 
-    <!-- Bottom Status Log Area -->
-    <line x1="16" y1="418" x2="379" y2="418" stroke="{panel_border}" stroke-width="1" />
+    <!-- Distinct Horizontal Divider Below Box -->
+    <line x1="16" y1="370" x2="379" y2="370" stroke="{panel_border}" stroke-width="1" />
     
-    <text x="20" y="438" class="mono" font-size="11" font-weight="700" fill="{accent_cyan}">$ ./status.sh --identity</text>
-    <text x="20" y="457" class="mono" font-size="10" fill="{text_secondary}">&gt; STATUS : <tspan fill="{text_primary}" font-weight="600">Final-Year B.Tech (CGPA 9.22/10)</tspan></text>
-    <text x="20" y="475" class="mono" font-size="10" fill="{text_secondary}">&gt; EXP    : <tspan fill="{text_primary}" font-weight="600">9 Mos Web Dev Intern @ Bada Builder</tspan></text>
-    <text x="20" y="493" class="mono" font-size="10" fill="{text_secondary}">&gt; LOC    : <tspan fill="{text_primary}" font-weight="600">Vadodara, Gujarat, India [IN]</tspan></text>
-    <text x="20" y="511" class="mono" font-size="10" fill="{text_secondary}">&gt; FOCUS  : <tspan fill="{accent_emerald}" font-weight="600">Full-Stack Web · Applied NLP · AWS</tspan></text>
+    <!-- Bottom Status Log Area: perfectly spaced, no overlap -->
+    <text x="20" y="396" class="mono" font-size="11" font-weight="700" fill="{accent_cyan}">$ ./status.sh --identity</text>
+    <text x="20" y="420" class="mono" font-size="10.5" fill="{text_secondary}">&gt; STATUS : <tspan fill="{text_primary}" font-weight="600">Final-Year B.Tech (CGPA 9.22/10)</tspan></text>
+    <text x="20" y="442" class="mono" font-size="10.5" fill="{text_secondary}">&gt; EXP    : <tspan fill="{text_primary}" font-weight="600">9 Mos Web Dev Intern @ Bada Builder</tspan></text>
+    <text x="20" y="464" class="mono" font-size="10.5" fill="{text_secondary}">&gt; LOC    : <tspan fill="{text_primary}" font-weight="600">Vadodara, Gujarat, India [IN]</tspan></text>
+    <text x="20" y="486" class="mono" font-size="10.5" fill="{text_secondary}">&gt; FOCUS  : <tspan fill="{accent_emerald}" font-weight="600">Full-Stack Web · Applied NLP · AWS</tspan></text>
   </g>
 
   <!-- ==================== RIGHT PANEL: SYSTEM.INFO & CAPABILITIES ==================== -->
@@ -273,73 +268,74 @@ def build_svg(theme="dark"):
     <text x="684" y="22" class="mono" font-size="10" font-weight="600" fill="{accent_violet}" text-anchor="end">~/profile/overview.json</text>
 
     <!-- Terminal Command Line -->
-    <text x="24" y="58" class="mono" font-size="12" font-weight="600" fill="{accent_cyan}">
+    <text x="24" y="58" class="mono" font-size="11.5" font-weight="600" fill="{accent_cyan}">
       sun2004ny@terminal:<tspan fill="{text_muted}">~$</tspan> sysinfo --profile detailed
     </text>
 
     <!-- Name Heading -->
-    <text x="24" y="92" class="sans" font-size="30" font-weight="900" fill="url(#text-grad-{theme})" letter-spacing="1">
+    <text x="24" y="90" class="sans" font-size="28" font-weight="900" fill="url(#text-grad-{theme})" letter-spacing="1">
       SUNNY MORE
     </text>
 
-    <!-- Animated Rotating Roles with SMIL -->
-    <g class="mono" font-size="13.5" font-weight="700" transform="translate(24, 114)">
+    <!-- Animated Rotating Roles with Inline Blinking Cursor -->
+    <g class="mono" font-size="13" font-weight="700" transform="translate(24, 112)">
       <!-- Role 1 -->
-      <text x="0" y="0" fill="{accent_cyan}">
-        FULL-STACK WEB ARCHITECT
+      <g>
         <animate attributeName="opacity" values="1;1;0;0;0;0;1" keyTimes="0;0.29;0.33;0.96;0.98;1;1" dur="9s" repeatCount="indefinite" />
-      </text>
+        <text x="0" y="0" fill="{accent_cyan}">
+          FULL-STACK WEB ARCHITECT <tspan fill="{accent_cyan}"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />▋</tspan>
+        </text>
+      </g>
       <!-- Role 2 -->
-      <text x="0" y="0" fill="{accent_violet}">
-        APPLIED NLP &amp; AI ENGINEER
+      <g>
         <animate attributeName="opacity" values="0;0;1;1;0;0;0" keyTimes="0;0.33;0.37;0.62;0.66;0.99;1" dur="9s" repeatCount="indefinite" />
-      </text>
+        <text x="0" y="0" fill="{accent_violet}">
+          APPLIED NLP &amp; AI ENGINEER <tspan fill="{accent_violet}"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />▋</tspan>
+        </text>
+      </g>
       <!-- Role 3 -->
-      <text x="0" y="0" fill="{accent_emerald}">
-        AWS CLOUD &amp; SYSTEMS BUILDER
+      <g>
         <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.66;0.70;0.95;0.97;0.99;1" dur="9s" repeatCount="indefinite" />
-      </text>
-      <!-- Cursor -->
-      <text x="285" y="0" fill="{accent_cyan}">
-        ▋
-        <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
-      </text>
+        <text x="0" y="0" fill="{accent_emerald}">
+          AWS CLOUD &amp; SYSTEMS BUILDER <tspan fill="{accent_emerald}"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />▋</tspan>
+        </text>
+      </g>
     </g>
 
     <!-- Divider Line -->
-    <line x1="24" y1="130" x2="682" y2="130" stroke="{panel_border}" stroke-width="1" />
+    <line x1="24" y1="126" x2="682" y2="126" stroke="{panel_border}" stroke-width="1" />
 
     <!-- Attributes Monospace Key-Value Grid -->
-    <g transform="translate(24, 148)" class="mono" font-size="11">
+    <g transform="translate(24, 144)" class="mono" font-size="11">
       <!-- Line 1 -->
       <text x="0" y="0" fill="{text_secondary}">&gt; DEGREE</text>
       <text x="120" y="0" fill="{accent_cyan}">::</text>
       <text x="140" y="0" fill="{text_primary}" font-weight="600">B.Tech AI &amp; Data Science (Sigma University · CGPA: 9.22 / 10)</text>
 
       <!-- Line 2 -->
-      <text x="0" y="20" fill="{text_secondary}">&gt; INTERNSHIP</text>
-      <text x="120" y="20" fill="{accent_cyan}">::</text>
-      <text x="140" y="20" fill="{text_primary}" font-weight="600">9 Months Web Dev Intern @ Bada Builder Pvt. Ltd. (Vadodara)</text>
+      <text x="0" y="19" fill="{text_secondary}">&gt; INTERNSHIP</text>
+      <text x="120" y="19" fill="{accent_cyan}">::</text>
+      <text x="140" y="19" fill="{text_primary}" font-weight="600">9 Months Web Dev Intern @ Bada Builder Pvt. Ltd. (Vadodara)</text>
 
       <!-- Line 3 -->
-      <text x="0" y="40" fill="{text_secondary}">&gt; CORE FOCUS</text>
-      <text x="120" y="40" fill="{accent_cyan}">::</text>
-      <text x="140" y="40" fill="{text_primary}" font-weight="600">Multi-Role Web Platforms, 3D WebGL, Streaming NLP Pipelines</text>
+      <text x="0" y="38" fill="{text_secondary}">&gt; CORE FOCUS</text>
+      <text x="120" y="38" fill="{accent_cyan}">::</text>
+      <text x="140" y="38" fill="{text_primary}" font-weight="600">Multi-Role Web Platforms, 3D WebGL, Streaming NLP Pipelines</text>
 
       <!-- Line 4 -->
-      <text x="0" y="60" fill="{text_secondary}">&gt; CLOUD &amp; QA</text>
-      <text x="120" y="60" fill="{accent_cyan}">::</text>
+      <text x="0" y="57" fill="{text_secondary}">&gt; CLOUD &amp; QA</text>
+      <text x="120" y="57" fill="{accent_cyan}">::</text>
       <text x="140" y="60" fill="{text_primary}" font-weight="600">AWS (EC2, S3, RDS), Docker, 58 pytest Tests + GitHub Actions CI</text>
     </g>
 
     <!-- Divider Line -->
-    <line x1="24" y1="224" x2="682" y2="224" stroke="{panel_border}" stroke-width="1" />
+    <line x1="24" y1="218" x2="682" y2="218" stroke="{panel_border}" stroke-width="1" />
 
     <!-- Technical Stack Pills Section -->
-    <text x="24" y="242" class="mono" font-size="10.5" font-weight="700" fill="{text_secondary}">[ PRODUCTION TECH STACK ]</text>
+    <text x="24" y="236" class="mono" font-size="10.5" font-weight="700" fill="{text_secondary}">[ PRODUCTION TECH STACK ]</text>
     
     <!-- Pills Row 1 -->
-    <g transform="translate(24, 252)">
+    <g transform="translate(24, 246)">
       <!-- React 19 -->
       <g transform="translate(0, 0)">
         <rect width="84" height="22" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
@@ -385,7 +381,7 @@ def build_svg(theme="dark"):
     </g>
 
     <!-- Pills Row 2 -->
-    <g transform="translate(24, 280)">
+    <g transform="translate(24, 274)">
       <!-- AWS (EC2, S3, RDS) -->
       <g transform="translate(0, 0)">
         <rect width="144" height="22" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
@@ -425,56 +421,62 @@ def build_svg(theme="dark"):
     </g>
 
     <!-- Divider Line -->
-    <line x1="24" y1="316" x2="682" y2="316" stroke="{panel_border}" stroke-width="1" />
+    <line x1="24" y1="308" x2="682" y2="308" stroke="{panel_border}" stroke-width="1" />
 
     <!-- Flagship Projects Section -->
-    <text x="24" y="334" class="mono" font-size="10.5" font-weight="700" fill="{text_secondary}">[ FLAGSHIP PRODUCTION SYSTEMS ]</text>
+    <text x="24" y="326" class="mono" font-size="10.5" font-weight="700" fill="{text_secondary}">[ FLAGSHIP PRODUCTION SYSTEMS ]</text>
 
     <!-- Project 1: Bada Builder -->
-    <g transform="translate(24, 344)">
-      <rect width="658" height="34" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
+    <g transform="translate(24, 336)">
+      <rect width="658" height="38" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
       <text x="14" y="16" class="mono" font-size="11" font-weight="700" fill="{accent_cyan}">BADA BUILDER</text>
       <text x="118" y="16" class="mono" font-size="10.5" fill="{text_muted}">|</text>
       <text x="130" y="16" class="sans" font-size="10.5" fill="{text_primary}">Live Real Estate Platform · 5 RBAC Dashboards, 3D WebGL, Razorpay, AWS EC2/S3/RDS</text>
-      <text x="14" y="27" class="mono" font-size="9" fill="{accent_emerald}">bada-builder-frontend.vercel.app · 9 Mos Production Build</text>
+      <text x="14" y="29" class="mono" font-size="9" fill="{accent_emerald}">bada-builder-frontend.vercel.app · 9 Mos Production Build</text>
     </g>
 
     <!-- Project 2: TrendRadar-AI -->
-    <g transform="translate(24, 384)">
-      <rect width="658" height="34" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
+    <g transform="translate(24, 380)">
+      <rect width="658" height="38" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
       <text x="14" y="16" class="mono" font-size="11" font-weight="700" fill="{accent_violet}">TRENDRADAR-AI</text>
       <text x="118" y="16" class="mono" font-size="10.5" fill="{text_muted}">|</text>
       <text x="130" y="16" class="sans" font-size="10.5" fill="{text_primary}">Streaming NLP Engine · Sentence-BERT, HDBSCAN, FAISS, 58 pytest tests + GitHub CI</text>
-      <text x="14" y="27" class="mono" font-size="9" fill="{accent_cyan}">8,784 Reddit Posts · Novelty Filter Slashed Alert Noise from 39 to 14</text>
+      <text x="14" y="29" class="mono" font-size="9" fill="{accent_cyan}">8,784 Reddit Posts · Novelty Filter Slashed Alert Noise from 39 to 14</text>
     </g>
 
     <!-- Project 3: RadiantWears -->
     <g transform="translate(24, 424)">
-      <rect width="658" height="34" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
+      <rect width="658" height="38" rx="6" fill="{pill_bg}" stroke="{pill_border}" />
       <text x="14" y="16" class="mono" font-size="11" font-weight="700" fill="{accent_emerald}">RADIANTWEARS</text>
       <text x="118" y="16" class="mono" font-size="10.5" fill="{text_muted}">|</text>
       <text x="130" y="16" class="sans" font-size="10.5" fill="{text_primary}">Full-Stack Clothing E-Commerce · React, Node.js, Neon PostgreSQL, Admin Dashboard</text>
-      <text x="14" y="27" class="mono" font-size="9" fill="{accent_amber}">radiantwear-puce.vercel.app · Order Lifecycle &amp; Inventory Sync</text>
+      <text x="14" y="29" class="mono" font-size="9" fill="{accent_amber}">radiantwear-puce.vercel.app · Order Lifecycle &amp; Inventory Sync</text>
     </g>
 
     <!-- Terminal Footer Interactive Links -->
-    <line x1="24" y1="470" x2="682" y2="470" stroke="{panel_border}" stroke-width="1" />
+    <line x1="24" y1="472" x2="682" y2="472" stroke="{panel_border}" stroke-width="1" />
 
     <g transform="translate(24, 480)">
       <!-- GitHub Link Card -->
       <g transform="translate(0, 0)">
         <rect width="210" height="30" rx="6" fill="{card_link_bg}" stroke="{card_link_border}" />
-        <text x="16" y="19" class="mono" font-size="11" font-weight="600" fill="{card_link_text}">🐙 github.com/sun2004ny</text>
+        <!-- GitHub Octocat SVG icon -->
+        <path d="M18 9c-3.3 0-6 2.7-6 6 0 2.6 1.7 4.9 4.1 5.7.3.1.4-.1.4-.3v-1.1c-1.7.4-2-8-2-.8-.3-.7-.7-.9-.7-.9-.5-.4 0-.4 0-.4.6 0 .9.6.9.6.5.9 1.4.6 1.7.5.1-.4.2-.6.4-.8-1.3-.1-2.7-.7-2.7-3 0-.7.2-1.2.6-1.7 0-.2-.3-.8.1-1.6 0 0 .5-.2 1.7.6.5-.1 1-.2 1.6-.2s1.1.1 1.6.2c1.2-.8 1.7-.6 1.7-.6.4.8.1 1.4.1 1.6.4.5.6 1 .6 1.7 0 2.3-1.4 2.8-2.7 3 .2.2.4.6.4 1.2v1.7c0 .2.1.4.4.3 2.4-.8 4.1-3.1 4.1-5.7 0-3.3-2.7-6-6-6z" fill="{card_link_text}" transform="translate(0, -1)" />
+        <text x="32" y="19" class="mono" font-size="11" font-weight="600" fill="{card_link_text}">github.com/sun2004ny</text>
       </g>
       <!-- LinkedIn Link Card -->
       <g transform="translate(222, 0)">
         <rect width="216" height="30" rx="6" fill="{card_link_bg}" stroke="{card_link_border}" />
-        <text x="16" y="19" class="mono" font-size="11" font-weight="600" fill="{card_link_text}">💼 linkedin.com/in/sunnymore</text>
+        <!-- LinkedIn in SVG icon -->
+        <path d="M15 11h2v8h-2v-8zm1-3c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2-1.2-.5-1.2-1.2.5-1.2 1.2-1.2zm3 3h2v1.2h.1c.3-.6 1.1-1.3 2.3-1.3 2.5 0 3 1.6 3 3.8v4.3h-2v-3.8c0-.9 0-2.1-1.3-2.1s-1.5 1-1.5 2v3.9h-2v-8z" fill="{card_link_text}" />
+        <text x="32" y="19" class="mono" font-size="11" font-weight="600" fill="{card_link_text}">linkedin.com/in/sunnymore</text>
       </g>
       <!-- Email Link Card -->
       <g transform="translate(450, 0)">
         <rect width="208" height="30" rx="6" fill="{card_link_bg}" stroke="{card_link_border}" />
-        <text x="14" y="19" class="mono" font-size="10.5" font-weight="600" fill="{card_link_text}">✉️ sunny260604@gmail.com</text>
+        <!-- Mail envelope SVG icon -->
+        <path d="M14 11h12c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1H14c-.6 0-1-.4-1-1v-7c0-.6.4-1 1-1zm6 4.5l-5.5-3.5h11l-5.5 3.5zm0 1.2l5.8-3.7H14.2l5.8 3.7z" fill="{card_link_text}" />
+        <text x="32" y="19" class="mono" font-size="10.5" font-weight="600" fill="{card_link_text}">sunny260604@gmail.com</text>
       </g>
     </g>
   </g>
@@ -488,8 +490,8 @@ if __name__ == "__main__":
     
     with open(r"c:\Users\sunny\Downloads\sun2004ny\dark.svg", "w", encoding="utf-8") as f:
         f.write(dark_svg)
-    print("Generated dark.svg successfully with authentic portrait.")
+    print("Regenerated dark.svg with strict frame bounds and zero overlap.")
 
     with open(r"c:\Users\sunny\Downloads\sun2004ny\light.svg", "w", encoding="utf-8") as f:
         f.write(light_svg)
-    print("Generated light.svg successfully with authentic portrait.")
+    print("Regenerated light.svg with strict frame bounds and zero overlap.")

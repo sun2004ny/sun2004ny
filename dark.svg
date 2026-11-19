@@ -37,8 +37,8 @@
       .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
       .ascii-art {
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-size: 8.7px;
-        letter-spacing: 1.4px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
         fill: #22d3ee;
       }
     </style>
@@ -96,61 +96,55 @@
     <text x="18" y="22" class="mono" font-size="11" font-weight="700" fill="#94a3b8">[ VISUAL.MAP // PORTRAIT ]</text>
     <text x="375" y="22" class="mono" font-size="10" font-weight="600" fill="#38bdf8" text-anchor="end">ASCII_VECTOR</text>
 
-    <!-- ASCII Canvas Viewport Box -->
-    <rect x="16" y="44" width="363" height="364" rx="10" fill="#030712" stroke="#164e63" stroke-width="1" />
+    <!-- ASCII Canvas Viewport Box: 44 to 348 (height 304px) -->
+    <rect x="16" y="44" width="363" height="308" rx="10" fill="#030712" stroke="#164e63" stroke-width="1" />
     
-    <!-- Scanning Light Line Effect (SMIL) -->
+    <!-- Scanning Light Line Effect (Constrained within Box) -->
     <line x1="18" y1="46" x2="377" y2="46" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.65">
-      <animate attributeName="y1" values="46;406;46" dur="6s" repeatCount="indefinite" />
-      <animate attributeName="y2" values="46;406;46" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="46;350;46" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="46;350;46" dur="6s" repeatCount="indefinite" />
       <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="6s" repeatCount="indefinite" />
     </line>
 
-    <!-- The 33-line ASCII Art Portrait -->
+    <!-- The 26-line Contained ASCII Art Portrait -->
     <text class="ascii-art" text-anchor="middle" xml:space="preserve">
-        <tspan x="232" y="120.0">                  %%%%%%%                     </tspan>
-        <tspan x="232" y="130.4">                %%%%%%%%%%%%                  </tspan>
-        <tspan x="232" y="140.8">              %%%%    %  %###%                </tspan>
-        <tspan x="232" y="151.2">             %%% % % %%%% %%%##               </tspan>
-        <tspan x="232" y="161.6">            %%%   %%%%%%%%%%%%#%              </tspan>
-        <tspan x="232" y="172.0">            % %%% %%%%%%%%%%%%%%              </tspan>
-        <tspan x="232" y="182.4">           %% % %%%%%@@%%%% %%%               </tspan>
-        <tspan x="232" y="192.8">            %  %###@@@@@@@@# %%               </tspan>
-        <tspan x="232" y="203.2">            @##@@@@#++:+++##+#                </tspan>
-        <tspan x="232" y="213.6">            @###@@@+:+:#::####                </tspan>
-        <tspan x="232" y="224.0">            @@##@  #+::+#+##+:#               </tspan>
-        <tspan x="232" y="234.4">            ##++++++:::::++:::@               </tspan>
-        <tspan x="232" y="244.8">            @#+::::++::+:::::+                </tspan>
-        <tspan x="232" y="255.2">            +:::::#::··:::··::                </tspan>
-        <tspan x="232" y="265.6">             ++::::::··:::··:                 </tspan>
-        <tspan x="232" y="276.0">               #::::::=====+                  </tspan>
-        <tspan x="232" y="286.4">               #++::=====:::+                 </tspan>
-        <tspan x="232" y="296.8">               #++++::::::::::+               </tspan>
-        <tspan x="232" y="307.2">             +············:··::·+             </tspan>
-        <tspan x="232" y="317.6">           +·::·········:::··::::·+           </tspan>
-        <tspan x="232" y="328.0">          ·::::······::::::·:::::::··+        </tspan>
-        <tspan x="232" y="338.4">        +·::::::·····::::::·:::::::::::·+     </tspan>
-        <tspan x="232" y="348.8">     +::········:::++++··+::·············::   </tspan>
-        <tspan x="232" y="359.2">   +:············::+++++++:················:+ </tspan>
-        <tspan x="232" y="369.6"> +:···············:+++++++···················+</tspan>
-        <tspan x="232" y="380.0">+:·················++++++····················:</tspan>
-        <tspan x="232" y="390.4">+···················+++++··++++++++···········</tspan>
-        <tspan x="232" y="400.8"> +···················:·:···++++++++···········</tspan>
-        <tspan x="232" y="411.2">  :···················:····++++++++···········</tspan>
-        <tspan x="232" y="421.6">   +··················:····++++====··········+</tspan>
-        <tspan x="232" y="432.0">    +:·····················+++++++=········:+ </tspan>
-        <tspan x="232" y="442.4">      :························:··:·······:   </tspan>
-        <tspan x="232" y="452.8">       +:·············:········:··:·····:+    </tspan>
+        <tspan x="197" y="72.0">                %%%%%%%%                </tspan>
+        <tspan x="197" y="82.2">              %%%%%  %%%%%%             </tspan>
+        <tspan x="197" y="92.4">            %%%%%   %%  %%##%           </tspan>
+        <tspan x="197" y="102.6">           %%% %% %%%%%%%%%%#%          </tspan>
+        <tspan x="197" y="112.8">          %%%%  %%%% %%%%%%%%%          </tspan>
+        <tspan x="197" y="123.0">          % %%%  %%%#  %  %%%%          </tspan>
+        <tspan x="197" y="133.2">          %   %###@@@@@@@# %%%          </tspan>
+        <tspan x="197" y="143.4">           @#@@@##+:::+++###@           </tspan>
+        <tspan x="197" y="153.6">           ###@@@#:+:+#:+##+@           </tspan>
+        <tspan x="197" y="163.8">          @###@  #+::+#+##+++           </tspan>
+        <tspan x="197" y="174.0">          @#+++++#+::::+++::#           </tspan>
+        <tspan x="197" y="184.2">           +::···::::::····:+           </tspan>
+        <tspan x="197" y="194.4">           :::::#::··::::·::+           </tspan>
+        <tspan x="197" y="204.6">             +:::+:===:===+             </tspan>
+        <tspan x="197" y="214.8">             #+:::::=====:#             </tspan>
+        <tspan x="197" y="225.0">              #++::::::::::+            </tspan>
+        <tspan x="197" y="235.2">            ++·············::·          </tspan>
+        <tspan x="197" y="245.4">           +···········::··:::·+        </tspan>
+        <tspan x="197" y="255.6">         +·::········::::··:::::·++     </tspan>
+        <tspan x="197" y="265.8">       +:·····::++++····+::········::+  </tspan>
+        <tspan x="197" y="276.0">    +::·······::++++++·++:·············:</tspan>
+        <tspan x="197" y="286.2">  +::··········:+++++++++···············</tspan>
+        <tspan x="197" y="296.4">+:··············+++++++++···············</tspan>
+        <tspan x="197" y="306.6">··················::::::················</tspan>
+        <tspan x="197" y="316.8">··················:::::·················</tspan>
+        <tspan x="197" y="327.0">:··················:·:··················</tspan>
     </text>
 
-    <!-- Bottom Status Log Area -->
-    <line x1="16" y1="418" x2="379" y2="418" stroke="#1e293b" stroke-width="1" />
+    <!-- Distinct Horizontal Divider Below Box -->
+    <line x1="16" y1="370" x2="379" y2="370" stroke="#1e293b" stroke-width="1" />
     
-    <text x="20" y="438" class="mono" font-size="11" font-weight="700" fill="#38bdf8">$ ./status.sh --identity</text>
-    <text x="20" y="457" class="mono" font-size="10" fill="#94a3b8">&gt; STATUS : <tspan fill="#f8fafc" font-weight="600">Final-Year B.Tech (CGPA 9.22/10)</tspan></text>
-    <text x="20" y="475" class="mono" font-size="10" fill="#94a3b8">&gt; EXP    : <tspan fill="#f8fafc" font-weight="600">9 Mos Web Dev Intern @ Bada Builder</tspan></text>
-    <text x="20" y="493" class="mono" font-size="10" fill="#94a3b8">&gt; LOC    : <tspan fill="#f8fafc" font-weight="600">Vadodara, Gujarat, India [IN]</tspan></text>
-    <text x="20" y="511" class="mono" font-size="10" fill="#94a3b8">&gt; FOCUS  : <tspan fill="#34d399" font-weight="600">Full-Stack Web · Applied NLP · AWS</tspan></text>
+    <!-- Bottom Status Log Area: perfectly spaced, no overlap -->
+    <text x="20" y="396" class="mono" font-size="11" font-weight="700" fill="#38bdf8">$ ./status.sh --identity</text>
+    <text x="20" y="420" class="mono" font-size="10.5" fill="#94a3b8">&gt; STATUS : <tspan fill="#f8fafc" font-weight="600">Final-Year B.Tech (CGPA 9.22/10)</tspan></text>
+    <text x="20" y="442" class="mono" font-size="10.5" fill="#94a3b8">&gt; EXP    : <tspan fill="#f8fafc" font-weight="600">9 Mos Web Dev Intern @ Bada Builder</tspan></text>
+    <text x="20" y="464" class="mono" font-size="10.5" fill="#94a3b8">&gt; LOC    : <tspan fill="#f8fafc" font-weight="600">Vadodara, Gujarat, India [IN]</tspan></text>
+    <text x="20" y="486" class="mono" font-size="10.5" fill="#94a3b8">&gt; FOCUS  : <tspan fill="#34d399" font-weight="600">Full-Stack Web · Applied NLP · AWS</tspan></text>
   </g>
 
   <!-- ==================== RIGHT PANEL: SYSTEM.INFO & CAPABILITIES ==================== -->
@@ -167,73 +161,74 @@
     <text x="684" y="22" class="mono" font-size="10" font-weight="600" fill="#c084fc" text-anchor="end">~/profile/overview.json</text>
 
     <!-- Terminal Command Line -->
-    <text x="24" y="58" class="mono" font-size="12" font-weight="600" fill="#38bdf8">
+    <text x="24" y="58" class="mono" font-size="11.5" font-weight="600" fill="#38bdf8">
       sun2004ny@terminal:<tspan fill="#64748b">~$</tspan> sysinfo --profile detailed
     </text>
 
     <!-- Name Heading -->
-    <text x="24" y="92" class="sans" font-size="30" font-weight="900" fill="url(#text-grad-dark)" letter-spacing="1">
+    <text x="24" y="90" class="sans" font-size="28" font-weight="900" fill="url(#text-grad-dark)" letter-spacing="1">
       SUNNY MORE
     </text>
 
-    <!-- Animated Rotating Roles with SMIL -->
-    <g class="mono" font-size="13.5" font-weight="700" transform="translate(24, 114)">
+    <!-- Animated Rotating Roles with Inline Blinking Cursor -->
+    <g class="mono" font-size="13" font-weight="700" transform="translate(24, 112)">
       <!-- Role 1 -->
-      <text x="0" y="0" fill="#38bdf8">
-        FULL-STACK WEB ARCHITECT
+      <g>
         <animate attributeName="opacity" values="1;1;0;0;0;0;1" keyTimes="0;0.29;0.33;0.96;0.98;1;1" dur="9s" repeatCount="indefinite" />
-      </text>
+        <text x="0" y="0" fill="#38bdf8">
+          FULL-STACK WEB ARCHITECT <tspan fill="#38bdf8"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />▋</tspan>
+        </text>
+      </g>
       <!-- Role 2 -->
-      <text x="0" y="0" fill="#c084fc">
-        APPLIED NLP &amp; AI ENGINEER
+      <g>
         <animate attributeName="opacity" values="0;0;1;1;0;0;0" keyTimes="0;0.33;0.37;0.62;0.66;0.99;1" dur="9s" repeatCount="indefinite" />
-      </text>
+        <text x="0" y="0" fill="#c084fc">
+          APPLIED NLP &amp; AI ENGINEER <tspan fill="#c084fc"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />▋</tspan>
+        </text>
+      </g>
       <!-- Role 3 -->
-      <text x="0" y="0" fill="#34d399">
-        AWS CLOUD &amp; SYSTEMS BUILDER
+      <g>
         <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.66;0.70;0.95;0.97;0.99;1" dur="9s" repeatCount="indefinite" />
-      </text>
-      <!-- Cursor -->
-      <text x="285" y="0" fill="#38bdf8">
-        ▋
-        <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
-      </text>
+        <text x="0" y="0" fill="#34d399">
+          AWS CLOUD &amp; SYSTEMS BUILDER <tspan fill="#34d399"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />▋</tspan>
+        </text>
+      </g>
     </g>
 
     <!-- Divider Line -->
-    <line x1="24" y1="130" x2="682" y2="130" stroke="#1e293b" stroke-width="1" />
+    <line x1="24" y1="126" x2="682" y2="126" stroke="#1e293b" stroke-width="1" />
 
     <!-- Attributes Monospace Key-Value Grid -->
-    <g transform="translate(24, 148)" class="mono" font-size="11">
+    <g transform="translate(24, 144)" class="mono" font-size="11">
       <!-- Line 1 -->
       <text x="0" y="0" fill="#94a3b8">&gt; DEGREE</text>
       <text x="120" y="0" fill="#38bdf8">::</text>
       <text x="140" y="0" fill="#f8fafc" font-weight="600">B.Tech AI &amp; Data Science (Sigma University · CGPA: 9.22 / 10)</text>
 
       <!-- Line 2 -->
-      <text x="0" y="20" fill="#94a3b8">&gt; INTERNSHIP</text>
-      <text x="120" y="20" fill="#38bdf8">::</text>
-      <text x="140" y="20" fill="#f8fafc" font-weight="600">9 Months Web Dev Intern @ Bada Builder Pvt. Ltd. (Vadodara)</text>
+      <text x="0" y="19" fill="#94a3b8">&gt; INTERNSHIP</text>
+      <text x="120" y="19" fill="#38bdf8">::</text>
+      <text x="140" y="19" fill="#f8fafc" font-weight="600">9 Months Web Dev Intern @ Bada Builder Pvt. Ltd. (Vadodara)</text>
 
       <!-- Line 3 -->
-      <text x="0" y="40" fill="#94a3b8">&gt; CORE FOCUS</text>
-      <text x="120" y="40" fill="#38bdf8">::</text>
-      <text x="140" y="40" fill="#f8fafc" font-weight="600">Multi-Role Web Platforms, 3D WebGL, Streaming NLP Pipelines</text>
+      <text x="0" y="38" fill="#94a3b8">&gt; CORE FOCUS</text>
+      <text x="120" y="38" fill="#38bdf8">::</text>
+      <text x="140" y="38" fill="#f8fafc" font-weight="600">Multi-Role Web Platforms, 3D WebGL, Streaming NLP Pipelines</text>
 
       <!-- Line 4 -->
-      <text x="0" y="60" fill="#94a3b8">&gt; CLOUD &amp; QA</text>
-      <text x="120" y="60" fill="#38bdf8">::</text>
+      <text x="0" y="57" fill="#94a3b8">&gt; CLOUD &amp; QA</text>
+      <text x="120" y="57" fill="#38bdf8">::</text>
       <text x="140" y="60" fill="#f8fafc" font-weight="600">AWS (EC2, S3, RDS), Docker, 58 pytest Tests + GitHub Actions CI</text>
     </g>
 
     <!-- Divider Line -->
-    <line x1="24" y1="224" x2="682" y2="224" stroke="#1e293b" stroke-width="1" />
+    <line x1="24" y1="218" x2="682" y2="218" stroke="#1e293b" stroke-width="1" />
 
     <!-- Technical Stack Pills Section -->
-    <text x="24" y="242" class="mono" font-size="10.5" font-weight="700" fill="#94a3b8">[ PRODUCTION TECH STACK ]</text>
+    <text x="24" y="236" class="mono" font-size="10.5" font-weight="700" fill="#94a3b8">[ PRODUCTION TECH STACK ]</text>
     
     <!-- Pills Row 1 -->
-    <g transform="translate(24, 252)">
+    <g transform="translate(24, 246)">
       <!-- React 19 -->
       <g transform="translate(0, 0)">
         <rect width="84" height="22" rx="6" fill="#0f172a" stroke="#1e293b" />
@@ -279,7 +274,7 @@
     </g>
 
     <!-- Pills Row 2 -->
-    <g transform="translate(24, 280)">
+    <g transform="translate(24, 274)">
       <!-- AWS (EC2, S3, RDS) -->
       <g transform="translate(0, 0)">
         <rect width="144" height="22" rx="6" fill="#0f172a" stroke="#1e293b" />
@@ -319,56 +314,62 @@
     </g>
 
     <!-- Divider Line -->
-    <line x1="24" y1="316" x2="682" y2="316" stroke="#1e293b" stroke-width="1" />
+    <line x1="24" y1="308" x2="682" y2="308" stroke="#1e293b" stroke-width="1" />
 
     <!-- Flagship Projects Section -->
-    <text x="24" y="334" class="mono" font-size="10.5" font-weight="700" fill="#94a3b8">[ FLAGSHIP PRODUCTION SYSTEMS ]</text>
+    <text x="24" y="326" class="mono" font-size="10.5" font-weight="700" fill="#94a3b8">[ FLAGSHIP PRODUCTION SYSTEMS ]</text>
 
     <!-- Project 1: Bada Builder -->
-    <g transform="translate(24, 344)">
-      <rect width="658" height="34" rx="6" fill="#0f172a" stroke="#1e293b" />
+    <g transform="translate(24, 336)">
+      <rect width="658" height="38" rx="6" fill="#0f172a" stroke="#1e293b" />
       <text x="14" y="16" class="mono" font-size="11" font-weight="700" fill="#38bdf8">BADA BUILDER</text>
       <text x="118" y="16" class="mono" font-size="10.5" fill="#64748b">|</text>
       <text x="130" y="16" class="sans" font-size="10.5" fill="#f8fafc">Live Real Estate Platform · 5 RBAC Dashboards, 3D WebGL, Razorpay, AWS EC2/S3/RDS</text>
-      <text x="14" y="27" class="mono" font-size="9" fill="#34d399">bada-builder-frontend.vercel.app · 9 Mos Production Build</text>
+      <text x="14" y="29" class="mono" font-size="9" fill="#34d399">bada-builder-frontend.vercel.app · 9 Mos Production Build</text>
     </g>
 
     <!-- Project 2: TrendRadar-AI -->
-    <g transform="translate(24, 384)">
-      <rect width="658" height="34" rx="6" fill="#0f172a" stroke="#1e293b" />
+    <g transform="translate(24, 380)">
+      <rect width="658" height="38" rx="6" fill="#0f172a" stroke="#1e293b" />
       <text x="14" y="16" class="mono" font-size="11" font-weight="700" fill="#c084fc">TRENDRADAR-AI</text>
       <text x="118" y="16" class="mono" font-size="10.5" fill="#64748b">|</text>
       <text x="130" y="16" class="sans" font-size="10.5" fill="#f8fafc">Streaming NLP Engine · Sentence-BERT, HDBSCAN, FAISS, 58 pytest tests + GitHub CI</text>
-      <text x="14" y="27" class="mono" font-size="9" fill="#38bdf8">8,784 Reddit Posts · Novelty Filter Slashed Alert Noise from 39 to 14</text>
+      <text x="14" y="29" class="mono" font-size="9" fill="#38bdf8">8,784 Reddit Posts · Novelty Filter Slashed Alert Noise from 39 to 14</text>
     </g>
 
     <!-- Project 3: RadiantWears -->
     <g transform="translate(24, 424)">
-      <rect width="658" height="34" rx="6" fill="#0f172a" stroke="#1e293b" />
+      <rect width="658" height="38" rx="6" fill="#0f172a" stroke="#1e293b" />
       <text x="14" y="16" class="mono" font-size="11" font-weight="700" fill="#34d399">RADIANTWEARS</text>
       <text x="118" y="16" class="mono" font-size="10.5" fill="#64748b">|</text>
       <text x="130" y="16" class="sans" font-size="10.5" fill="#f8fafc">Full-Stack Clothing E-Commerce · React, Node.js, Neon PostgreSQL, Admin Dashboard</text>
-      <text x="14" y="27" class="mono" font-size="9" fill="#fbbf24">radiantwear-puce.vercel.app · Order Lifecycle &amp; Inventory Sync</text>
+      <text x="14" y="29" class="mono" font-size="9" fill="#fbbf24">radiantwear-puce.vercel.app · Order Lifecycle &amp; Inventory Sync</text>
     </g>
 
     <!-- Terminal Footer Interactive Links -->
-    <line x1="24" y1="470" x2="682" y2="470" stroke="#1e293b" stroke-width="1" />
+    <line x1="24" y1="472" x2="682" y2="472" stroke="#1e293b" stroke-width="1" />
 
     <g transform="translate(24, 480)">
       <!-- GitHub Link Card -->
       <g transform="translate(0, 0)">
         <rect width="210" height="30" rx="6" fill="#0c1527" stroke="#1e293b" />
-        <text x="16" y="19" class="mono" font-size="11" font-weight="600" fill="#38bdf8">🐙 github.com/sun2004ny</text>
+        <!-- GitHub Octocat SVG icon -->
+        <path d="M18 9c-3.3 0-6 2.7-6 6 0 2.6 1.7 4.9 4.1 5.7.3.1.4-.1.4-.3v-1.1c-1.7.4-2-8-2-.8-.3-.7-.7-.9-.7-.9-.5-.4 0-.4 0-.4.6 0 .9.6.9.6.5.9 1.4.6 1.7.5.1-.4.2-.6.4-.8-1.3-.1-2.7-.7-2.7-3 0-.7.2-1.2.6-1.7 0-.2-.3-.8.1-1.6 0 0 .5-.2 1.7.6.5-.1 1-.2 1.6-.2s1.1.1 1.6.2c1.2-.8 1.7-.6 1.7-.6.4.8.1 1.4.1 1.6.4.5.6 1 .6 1.7 0 2.3-1.4 2.8-2.7 3 .2.2.4.6.4 1.2v1.7c0 .2.1.4.4.3 2.4-.8 4.1-3.1 4.1-5.7 0-3.3-2.7-6-6-6z" fill="#38bdf8" transform="translate(0, -1)" />
+        <text x="32" y="19" class="mono" font-size="11" font-weight="600" fill="#38bdf8">github.com/sun2004ny</text>
       </g>
       <!-- LinkedIn Link Card -->
       <g transform="translate(222, 0)">
         <rect width="216" height="30" rx="6" fill="#0c1527" stroke="#1e293b" />
-        <text x="16" y="19" class="mono" font-size="11" font-weight="600" fill="#38bdf8">💼 linkedin.com/in/sunnymore</text>
+        <!-- LinkedIn in SVG icon -->
+        <path d="M15 11h2v8h-2v-8zm1-3c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2-1.2-.5-1.2-1.2.5-1.2 1.2-1.2zm3 3h2v1.2h.1c.3-.6 1.1-1.3 2.3-1.3 2.5 0 3 1.6 3 3.8v4.3h-2v-3.8c0-.9 0-2.1-1.3-2.1s-1.5 1-1.5 2v3.9h-2v-8z" fill="#38bdf8" />
+        <text x="32" y="19" class="mono" font-size="11" font-weight="600" fill="#38bdf8">linkedin.com/in/sunnymore</text>
       </g>
       <!-- Email Link Card -->
       <g transform="translate(450, 0)">
         <rect width="208" height="30" rx="6" fill="#0c1527" stroke="#1e293b" />
-        <text x="14" y="19" class="mono" font-size="10.5" font-weight="600" fill="#38bdf8">✉️ sunny260604@gmail.com</text>
+        <!-- Mail envelope SVG icon -->
+        <path d="M14 11h12c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1H14c-.6 0-1-.4-1-1v-7c0-.6.4-1 1-1zm6 4.5l-5.5-3.5h11l-5.5 3.5zm0 1.2l5.8-3.7H14.2l5.8 3.7z" fill="#38bdf8" />
+        <text x="32" y="19" class="mono" font-size="10.5" font-weight="600" fill="#38bdf8">sunny260604@gmail.com</text>
       </g>
     </g>
   </g>
