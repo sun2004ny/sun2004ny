@@ -2,14 +2,18 @@
 """
 Generates self-contained, GitHub-compatible, responsive, animated dark.svg and light.svg
 for Sunny More's GitHub Profile README.
-Ensures perfect frame containment with zero overlaps or clipping.
+Features:
+- Full cybernetic radar scanning HUD (concentric rotating rings, calibration markers, particle nodes)
+- Holographic laser sweep beam with radiant wash gradient
+- 4-corner HUD targeting brackets
+- Fine scanline texture overlay
+- Strict layout containment (zero overflow)
 """
 
 import os
 import xml.etree.ElementTree as ET
 
 # 26-line perfectly contained ASCII portrait of Sunny More
-# Captures: signature wavy/curly hair, Wayfarer sunglasses with specular glint, mustache, bright smile, open collar & shoulders
 ascii_art = [
     '                %%%%%%%%                ',
     '              %%%%%  %%%%%%             ',
@@ -78,6 +82,10 @@ def build_svg(theme="dark"):
         ascii_box_bg = "#030712"
         ascii_box_border = "#164e63"
         
+        laser_color = "#38bdf8"
+        laser_wash_start = "rgba(56, 189, 248, 0.28)"
+        laser_wash_end = "rgba(56, 189, 248, 0)"
+        
         pill_bg = "#0f172a"
         pill_border = "#1e293b"
         pill_text = "#e2e8f0"
@@ -86,8 +94,8 @@ def build_svg(theme="dark"):
         card_link_border = "#1e293b"
         card_link_text = "#38bdf8"
         
-        glow1 = "rgba(56, 189, 248, 0.12)"
-        glow2 = "rgba(192, 132, 252, 0.10)"
+        glow1 = "rgba(56, 189, 248, 0.14)"
+        glow2 = "rgba(192, 132, 252, 0.12)"
         glow3 = "rgba(52, 211, 153, 0.08)"
     else:
         bg_start = "#f8fafc"
@@ -115,6 +123,10 @@ def build_svg(theme="dark"):
         ascii_box_bg = "#f8fafc"
         ascii_box_border = "#94a3b8"
         
+        laser_color = "#0284c7"
+        laser_wash_start = "rgba(2, 132, 199, 0.22)"
+        laser_wash_end = "rgba(2, 132, 199, 0)"
+        
         pill_bg = "#f1f5f9"
         pill_border = "#cbd5e1"
         pill_text = "#1e293b"
@@ -127,8 +139,7 @@ def build_svg(theme="dark"):
         glow2 = "rgba(124, 58, 237, 0.08)"
         glow3 = "rgba(5, 150, 105, 0.08)"
 
-    # Text lines for ASCII: 26 lines starting at y=70, dy=10.2 -> ends at 325px (box is 44 to 352)
-    ascii_tspans = make_ascii_svg_lines(x_center=197, y_start=72, dy=10.2)
+    ascii_tspans = make_ascii_svg_lines(x_center=197.5, y_start=72, dy=10.2)
     
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="1180" height="610" role="img" aria-label="Sunny More — Full-Stack Web Architect and Applied NLP Engineer Profile Banner">
   <defs>
@@ -159,9 +170,20 @@ def build_svg(theme="dark"):
       <stop offset="100%" stop-color="{accent_violet}" />
     </linearGradient>
 
+    <!-- Laser Wash Beam Gradient -->
+    <linearGradient id="laser-wash-{theme}" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="{laser_wash_start}" />
+      <stop offset="100%" stop-color="{laser_wash_end}" />
+    </linearGradient>
+
     <!-- Subtle Dot Grid Pattern -->
     <pattern id="grid-{theme}" width="24" height="24" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="0.8" fill="{grid_stroke}" fill-opacity="{grid_opacity}" />
+    </pattern>
+
+    <!-- Horizontal Scanlines Pattern -->
+    <pattern id="scanlines-{theme}" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="1" x2="100" y2="1" stroke="{accent_cyan}" stroke-width="0.7" stroke-opacity="0.3" />
     </pattern>
 
     <style>
@@ -215,7 +237,7 @@ def build_svg(theme="dark"):
     <text x="26" y="14.5" class="mono" font-size="10.5" font-weight="700" fill="{accent_emerald}">OPEN TO ROLES</text>
   </g>
 
-  <!-- ==================== LEFT PANEL: VISUAL IDENTITY & ASCII PORTRAIT ==================== -->
+  <!-- ==================== LEFT PANEL: CYBERNETIC VISUAL SCAN & ASCII PORTRAIT ==================== -->
   <g transform="translate(32, 56)">
     <!-- Panel Glass Container -->
     <rect width="395" height="524" rx="16" fill="{panel_bg}" fill-opacity="{panel_opacity}" stroke="{panel_border}" stroke-width="1.2" />
@@ -225,28 +247,81 @@ def build_svg(theme="dark"):
     <rect y="18" width="395" height="16" fill="{header_bar_bg}" />
     <line x1="0" y1="34" x2="395" y2="34" stroke="{panel_border}" stroke-width="1" />
     
-    <text x="18" y="22" class="mono" font-size="11" font-weight="700" fill="{text_secondary}">[ VISUAL.MAP // PORTRAIT ]</text>
-    <text x="375" y="22" class="mono" font-size="10" font-weight="600" fill="{accent_cyan}" text-anchor="end">ASCII_VECTOR</text>
+    <text x="18" y="22" class="mono" font-size="11" font-weight="700" fill="{text_secondary}">[ VISUAL.MAP // CYBER_SCAN ]</text>
+    <text x="375" y="22" class="mono" font-size="10" font-weight="600" fill="{accent_cyan}" text-anchor="end">HUD_RADAR_ACTIVE</text>
 
-    <!-- ASCII Canvas Viewport Box: 44 to 348 (height 304px) -->
+    <!-- ASCII Canvas Viewport Box: 44 to 352 (height 308px) -->
     <rect x="16" y="44" width="363" height="308" rx="10" fill="{ascii_box_bg}" stroke="{ascii_box_border}" stroke-width="1" />
     
-    <!-- Scanning Light Line Effect (Constrained within Box) -->
-    <line x1="18" y1="46" x2="377" y2="46" stroke="{accent_cyan}" stroke-width="1.5" stroke-opacity="0.65">
-      <animate attributeName="y1" values="46;350;46" dur="6s" repeatCount="indefinite" />
-      <animate attributeName="y2" values="46;350;46" dur="6s" repeatCount="indefinite" />
-      <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="6s" repeatCount="indefinite" />
-    </line>
+    <!-- Horizontal Fine Scanlines Background -->
+    <rect x="16" y="44" width="363" height="308" rx="10" fill="url(#scanlines-{theme})" fill-opacity="0.12" />
+
+    <!-- 4 Corner HUD Targeting Brackets -->
+    <path d="M 26 62 L 26 52 L 36 52" fill="none" stroke="{accent_cyan}" stroke-width="2" stroke-linecap="round" />
+    <path d="M 369 62 L 369 52 L 359 52" fill="none" stroke="{accent_cyan}" stroke-width="2" stroke-linecap="round" />
+    <path d="M 26 334 L 26 344 L 36 344" fill="none" stroke="{accent_cyan}" stroke-width="2" stroke-linecap="round" />
+    <path d="M 369 334 L 369 344 L 359 344" fill="none" stroke="{accent_cyan}" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Rotating Cyber-Radar Ring 1: Outer Clockwise Orbit -->
+    <g>
+      <circle cx="197.5" cy="185" r="132" fill="none" stroke="{accent_cyan}" stroke-width="1.3" stroke-opacity="0.36" stroke-dasharray="16 10 40 12 85 15 28 12">
+        <animateTransform attributeName="transform" type="rotate" from="0 197.5 185" to="360 197.5 185" dur="20s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Rotating Cyber-Radar Ring 2: Inner Counter-Clockwise Segmented Orbit -->
+    <g>
+      <circle cx="197.5" cy="185" r="118" fill="none" stroke="{accent_violet}" stroke-width="1.3" stroke-opacity="0.38" stroke-dasharray="32 15 12 15 65 18">
+        <animateTransform attributeName="transform" type="rotate" from="360 197.5 185" to="0 197.5 185" dur="14s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Radar Calibrations & Telemetry Markers -->
+    <text x="70" y="80" class="mono" font-size="8.5" fill="{accent_cyan}" font-weight="700" letter-spacing="1">SCANNER_01 // 60FPS</text>
+    <text x="325" y="80" class="mono" font-size="8.5" fill="{accent_violet}" font-weight="700" letter-spacing="1" text-anchor="end">FOV: 360° [LOCK]</text>
+    <text x="70" y="322" class="mono" font-size="8.5" fill="{text_muted}" letter-spacing="1">RADAR_NODE: 0x9F4</text>
+    <text x="325" y="322" class="mono" font-size="8.5" fill="{accent_emerald}" font-weight="700" letter-spacing="1" text-anchor="end">MATCH: 99.8%</text>
+
+    <!-- Floating Cyber Telemetry Particle Nodes -->
+    <circle cx="85" cy="130" r="2.5" fill="{accent_cyan}">
+      <animate attributeName="r" values="2;3.8;2" dur="2.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="310" cy="145" r="2.5" fill="{accent_violet}">
+      <animate attributeName="r" values="2.5;4;2.5" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="75" cy="245" r="2" fill="{accent_emerald}">
+      <animate attributeName="r" values="1.8;3.2;1.8" dur="2.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="320" cy="235" r="2.5" fill="{accent_cyan}">
+      <animate attributeName="r" values="2;3.5;2" dur="2.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite" />
+    </circle>
 
     <!-- The 26-line Contained ASCII Art Portrait -->
     <text class="ascii-art" text-anchor="middle" xml:space="preserve">
 {ascii_tspans}
     </text>
 
+    <!-- Cyber Holographic Laser Sweep Effect (Radiant Wash Beam) -->
+    <g>
+      <!-- Radiant wash beam -->
+      <rect x="18" y="46" width="359" height="38" fill="url(#laser-wash-{theme})">
+        <animate attributeName="y" values="46;308;46" dur="4.5s" repeatCount="indefinite" />
+      </rect>
+      <!-- Leading laser line -->
+      <line x1="18" y1="46" x2="377" y2="46" stroke="{laser_color}" stroke-width="2" stroke-opacity="0.88">
+        <animate attributeName="y1" values="46;346;46" dur="4.5s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="46;346;46" dur="4.5s" repeatCount="indefinite" />
+      </line>
+    </g>
+
     <!-- Distinct Horizontal Divider Below Box -->
     <line x1="16" y1="370" x2="379" y2="370" stroke="{panel_border}" stroke-width="1" />
     
-    <!-- Bottom Status Log Area: perfectly spaced, no overlap -->
+    <!-- Bottom Status Log Area -->
     <text x="20" y="396" class="mono" font-size="11" font-weight="700" fill="{accent_cyan}">$ ./status.sh --identity</text>
     <text x="20" y="420" class="mono" font-size="10.5" fill="{text_secondary}">&gt; STATUS : <tspan fill="{text_primary}" font-weight="600">Final-Year B.Tech (CGPA 9.22/10)</tspan></text>
     <text x="20" y="442" class="mono" font-size="10.5" fill="{text_secondary}">&gt; EXP    : <tspan fill="{text_primary}" font-weight="600">9 Mos Web Dev Intern @ Bada Builder</tspan></text>
@@ -460,21 +535,18 @@ def build_svg(theme="dark"):
       <!-- GitHub Link Card -->
       <g transform="translate(0, 0)">
         <rect width="210" height="30" rx="6" fill="{card_link_bg}" stroke="{card_link_border}" />
-        <!-- GitHub Octocat SVG icon -->
         <path d="M18 9c-3.3 0-6 2.7-6 6 0 2.6 1.7 4.9 4.1 5.7.3.1.4-.1.4-.3v-1.1c-1.7.4-2-8-2-.8-.3-.7-.7-.9-.7-.9-.5-.4 0-.4 0-.4.6 0 .9.6.9.6.5.9 1.4.6 1.7.5.1-.4.2-.6.4-.8-1.3-.1-2.7-.7-2.7-3 0-.7.2-1.2.6-1.7 0-.2-.3-.8.1-1.6 0 0 .5-.2 1.7.6.5-.1 1-.2 1.6-.2s1.1.1 1.6.2c1.2-.8 1.7-.6 1.7-.6.4.8.1 1.4.1 1.6.4.5.6 1 .6 1.7 0 2.3-1.4 2.8-2.7 3 .2.2.4.6.4 1.2v1.7c0 .2.1.4.4.3 2.4-.8 4.1-3.1 4.1-5.7 0-3.3-2.7-6-6-6z" fill="{card_link_text}" transform="translate(0, -1)" />
         <text x="32" y="19" class="mono" font-size="11" font-weight="600" fill="{card_link_text}">github.com/sun2004ny</text>
       </g>
       <!-- LinkedIn Link Card -->
       <g transform="translate(222, 0)">
         <rect width="216" height="30" rx="6" fill="{card_link_bg}" stroke="{card_link_border}" />
-        <!-- LinkedIn in SVG icon -->
         <path d="M15 11h2v8h-2v-8zm1-3c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2-1.2-.5-1.2-1.2.5-1.2 1.2-1.2zm3 3h2v1.2h.1c.3-.6 1.1-1.3 2.3-1.3 2.5 0 3 1.6 3 3.8v4.3h-2v-3.8c0-.9 0-2.1-1.3-2.1s-1.5 1-1.5 2v3.9h-2v-8z" fill="{card_link_text}" />
         <text x="32" y="19" class="mono" font-size="11" font-weight="600" fill="{card_link_text}">linkedin.com/in/sunnymore</text>
       </g>
       <!-- Email Link Card -->
       <g transform="translate(450, 0)">
         <rect width="208" height="30" rx="6" fill="{card_link_bg}" stroke="{card_link_border}" />
-        <!-- Mail envelope SVG icon -->
         <path d="M14 11h12c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1H14c-.6 0-1-.4-1-1v-7c0-.6.4-1 1-1zm6 4.5l-5.5-3.5h11l-5.5 3.5zm0 1.2l5.8-3.7H14.2l5.8 3.7z" fill="{card_link_text}" />
         <text x="32" y="19" class="mono" font-size="10.5" font-weight="600" fill="{card_link_text}">sunny260604@gmail.com</text>
       </g>
@@ -490,8 +562,8 @@ if __name__ == "__main__":
     
     with open(r"c:\Users\sunny\Downloads\sun2004ny\dark.svg", "w", encoding="utf-8") as f:
         f.write(dark_svg)
-    print("Regenerated dark.svg with strict frame bounds and zero overlap.")
+    print("Regenerated dark.svg with cybernetic scanning effects.")
 
     with open(r"c:\Users\sunny\Downloads\sun2004ny\light.svg", "w", encoding="utf-8") as f:
         f.write(light_svg)
-    print("Regenerated light.svg with strict frame bounds and zero overlap.")
+    print("Regenerated light.svg with cybernetic scanning effects.")
