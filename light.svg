@@ -28,6 +28,11 @@
       <stop offset="100%" stop-color="rgba(0, 0, 0, 0)" />
     </linearGradient>
 
+    <!-- Status Green Glow Filter -->
+    <filter id="green-status-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#22c55e" flood-opacity="0.85" />
+    </filter>
+
     <!-- Subtle Dot Grid Pattern -->
     <pattern id="grid-light" width="24" height="24" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="0.8" fill="#cbd5e1" fill-opacity="0.35" />
@@ -68,14 +73,14 @@
     sun2004ny@workstation: ~/portfolio (main) — <tspan fill="#000000">[SYSTEM.ONLINE]</tspan>
   </text>
 
-  <!-- Top Right Available Status Pill -->
+  <!-- Top Right Available Status Pill (Green: Open to Roles / Open to Work) -->
   <g transform="translate(1005, 12)">
-    <rect width="145" height="20" rx="10" fill="#f1f5f9" stroke="#000000" stroke-width="1" stroke-opacity="0.6" />
-    <circle cx="14" cy="10" r="3.5" fill="#000000">
-      <animate attributeName="r" values="3;4.2;3" dur="2s" repeatCount="indefinite" />
+    <rect width="145" height="20" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2" stroke-opacity="0.85" />
+    <circle cx="14" cy="10" r="3.5" fill="#16a34a" filter="url(#green-status-glow)">
+      <animate attributeName="r" values="3;4.3;3" dur="2s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
     </circle>
-    <text x="26" y="14.5" class="mono" font-size="10.5" font-weight="700" fill="#000000">OPEN TO ROLES</text>
+    <text x="26" y="14.5" class="mono" font-size="10.5" font-weight="700" fill="#15803d">OPEN TO ROLES</text>
   </g>
 
   <!-- ==================== LEFT PANEL: 3D CYBER-SCAN & HUD RADAR ==================== -->
@@ -226,17 +231,17 @@
       <text x="110" y="21" fill="#000000">::</text>
       <text x="126" y="21" fill="#000000" font-weight="600">9 Months Web Dev Intern @ Bada Builder Pvt. Ltd. (Vadodara)</text>
 
-      <!-- Line 3: FRONTEND & BACKEND (Added below internship) -->
+      <!-- Line 3: FRONTEND & BACKEND -->
       <text x="0" y="43" fill="#000000">&gt; DEV STACK</text>
       <text x="110" y="43" fill="#000000">::</text>
       <text x="126" y="43" fill="#000000" font-weight="600">Frontend &amp; Backend : React.js, Three.js, HTML, CSS, Tailwind · Node.js, Express, REST, Socket.io</text>
 
-      <!-- Line 4: DATABASES & CLOUD (Added below internship) -->
+      <!-- Line 4: DATABASES & CLOUD -->
       <text x="0" y="65" fill="#000000">&gt; DB &amp; CLOUD</text>
       <text x="110" y="65" fill="#000000">::</text>
       <text x="126" y="65" fill="#000000" font-weight="600">Databases &amp; Cloud  : PostgreSQL, Neon DB, MongoDB, AWS, Firebase, Google Cloud</text>
 
-      <!-- Line 5: TOOLS & DEPLOYMENT (Added below internship) -->
+      <!-- Line 5: TOOLS & DEPLOYMENT -->
       <text x="0" y="87" fill="#000000">&gt; TOOLING</text>
       <text x="110" y="87" fill="#000000">::</text>
       <text x="126" y="87" fill="#000000" font-weight="600">Tools &amp; Deployment : Git, GitHub, Linux, Postman, Vercel, Render</text>
@@ -248,13 +253,13 @@
     <!-- Flagship Projects Section -->
     <text x="24" y="272" class="mono" font-size="10.5" font-weight="700" fill="#000000">[ FLAGSHIP PRODUCTION SYSTEMS ]</text>
 
-    <!-- Project 1: Bada Builder -->
+    <!-- Project 1: Bada Builder (URL links removed) -->
     <g transform="translate(24, 284)">
       <rect width="658" height="48" rx="6" fill="#f1f5f9" stroke="#cbd5e1" />
       <text x="14" y="19" class="mono" font-size="11" font-weight="700" fill="#000000">BADA BUILDER</text>
       <text x="118" y="19" class="mono" font-size="10.5" fill="#000000">|</text>
       <text x="130" y="19" class="sans" font-size="10.5" fill="#000000">Live Real Estate Platform · 5 RBAC Dashboards, 3D WebGL, Razorpay, AWS EC2/S3/RDS</text>
-      <text x="14" y="36" class="mono" font-size="9.5" fill="#000000">bada-builder-frontend.vercel.app · 9 Mos Production Build</text>
+      <text x="14" y="36" class="mono" font-size="9.5" fill="#000000">5 Role-Based Dashboards · AWS S3/EC2/RDS Architecture · 9 Mos Production Build</text>
     </g>
 
     <!-- Project 2: TrendRadar-AI -->
@@ -266,13 +271,13 @@
       <text x="14" y="36" class="mono" font-size="9.5" fill="#000000">8,784 Reddit Posts · Novelty Filter Slashed Alert Noise from 39 to 14</text>
     </g>
 
-    <!-- Project 3: RadiantWears -->
+    <!-- Project 3: RadiantWears (URL links removed) -->
     <g transform="translate(24, 400)">
       <rect width="658" height="48" rx="6" fill="#f1f5f9" stroke="#cbd5e1" />
       <text x="14" y="19" class="mono" font-size="11" font-weight="700" fill="#000000">RADIANTWEARS</text>
       <text x="118" y="19" class="mono" font-size="10.5" fill="#000000">|</text>
       <text x="130" y="19" class="sans" font-size="10.5" fill="#000000">Full-Stack Clothing E-Commerce · React, Node.js, Neon PostgreSQL, Admin Dashboard</text>
-      <text x="14" y="36" class="mono" font-size="9.5" fill="#000000">radiantwear-puce.vercel.app · Order Lifecycle &amp; Inventory Sync</text>
+      <text x="14" y="36" class="mono" font-size="9.5" fill="#000000">Order Lifecycle &amp; Inventory Sync · Custom Admin Operations</text>
     </g>
 
     <!-- Terminal Footer Interactive Links -->
@@ -289,13 +294,13 @@
       <g transform="translate(222, 0)">
         <rect width="216" height="32" rx="6" fill="#f1f5f9" stroke="#cbd5e1" />
         <path d="M15 11h2v8h-2v-8zm1-3c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2-1.2-.5-1.2-1.2.5-1.2 1.2-1.2zm3 3h2v1.2h.1c.3-.6 1.1-1.3 2.3-1.3 2.5 0 3 1.6 3 3.8v4.3h-2v-3.8c0-.9 0-2.1-1.3-2.1s-1.5 1-1.5 2v3.9h-2v-8z" fill="#000000" transform="translate(0, 1)" />
-        <text x="32" y="20" class="mono" font-size="11" font-weight="600" fill="#000000">linkedin.com/in/sunnymore</text>
+        <text x="32" y="20" class="mono" font-size="11" font-weight="600" fill="#000000">linkedin.com/in/sunny-more</text>
       </g>
       <!-- Email Link Card -->
       <g transform="translate(450, 0)">
         <rect width="208" height="32" rx="6" fill="#f1f5f9" stroke="#cbd5e1" />
         <path d="M14 11h12c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1H14c-.6 0-1-.4-1-1v-7c0-.6.4-1 1-1zm6 4.5l-5.5-3.5h11l-5.5 3.5zm0 1.2l5.8-3.7H14.2l5.8 3.7z" fill="#000000" transform="translate(0, 1)" />
-        <text x="32" y="20" class="mono" font-size="10.5" font-weight="600" fill="#000000">sunny260604@gmail.com</text>
+        <text x="32" y="20" class="mono" font-size="10.5" font-weight="600" fill="#000000">sunny250504@gmail.com</text>
       </g>
     </g>
   </g>
