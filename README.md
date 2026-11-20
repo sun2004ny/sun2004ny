@@ -44,6 +44,21 @@
 
 ---
 
+### 📊 GitHub Activity
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=sun2004ny&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Sunny's GitHub Stats" height="155" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sun2004ny&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="155" />
+
+<br />
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=sun2004ny&theme=tokyonight&hide_border=true" alt="GitHub Streak" height="150" />
+
+</div>
+
+---
+
 <div align="center">
   <sub>Designed & Built by <strong>Sunny More</strong> · Vadodara, Gujarat, India</sub>
 </div>
