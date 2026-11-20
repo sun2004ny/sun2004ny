@@ -160,7 +160,7 @@
     <text x="20" y="420" class="mono" font-size="10.5" fill="#000000">&gt; STATUS : <tspan fill="#000000" font-weight="600">Final-Year B.Tech (CGPA 9.22/10)</tspan></text>
     <text x="20" y="442" class="mono" font-size="10.5" fill="#000000">&gt; EXP    : <tspan fill="#000000" font-weight="600">9 Mos Web Dev Intern @ Bada Builder</tspan></text>
     <text x="20" y="464" class="mono" font-size="10.5" fill="#000000">&gt; LOC    : <tspan fill="#000000" font-weight="600">Vadodara, Gujarat, India [IN]</tspan></text>
-    <text x="20" y="486" class="mono" font-size="10.5" fill="#000000">&gt; FOCUS  : <tspan fill="#000000" font-weight="600">Full-Stack Web · Applied NLP · AWS</tspan></text>
+    <text x="20" y="486" class="mono" font-size="10.5" fill="#000000">&gt; FOCUS  : <tspan fill="#000000" font-weight="600">Agentic AI · RAG · LLMs · Automation</tspan></text>
   </g>
 
   <!-- ==================== RIGHT PANEL: SYSTEM.INFO ==================== -->
