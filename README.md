@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="light.svg" />
-  <img src="dark.svg" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="banner-light.svg" />
+  <img src="banner-dark.svg" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
 </picture>
 
 Currently exploring and working with:
