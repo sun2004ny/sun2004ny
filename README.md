@@ -1,24 +1,16 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=4" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/light.svg?v=4" />
-  <img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=4" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=6" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/light.svg?v=6" />
+  <img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=6" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
 </picture>
 
 <br /><br />
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sunnymore)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sunny260604@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sun2004ny)
-
-<br /><br />
-
-[![Degree](https://img.shields.io/badge/Degree-B.Tech_AI_&_Data_Science-8A2BE2?style=flat-square)](https://www.sigmauniversity.ac.in/)
-[![CGPA](https://img.shields.io/badge/CGPA-9.22_%2F_10-brightgreen?style=flat-square)](#)
-[![Experience](https://img.shields.io/badge/Internship-9_Months_Web_Dev-blue?style=flat-square)](#)
-[![Location](https://img.shields.io/badge/Location-Vadodara%2C_India-orange?style=flat-square)](#)
-[![Status](https://img.shields.io/badge/Status-Open_to_Roles-success?style=flat-square)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-1d4ed8?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sunnymore)
+[![Email](https://img.shields.io/badge/Email-020617?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sunny260604@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-020617?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sun2004ny)
 
 </div>
 
@@ -50,21 +42,6 @@
 * **Backend & Cloud:** Node.js, Express.js, PostgreSQL (Neon), AWS (EC2, S3, RDS), Socket.io, Docker
 * **AI / ML & NLP:** Python, Sentence-BERT, FAISS Vector Search, HDBSCAN, scikit-learn, Streamlit
 * **Tools & Testing:** Git, GitHub Actions (CI/CD), pytest, Linux, Postman
-
----
-
-### 📊 GitHub Activity
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=sun2004ny&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Sunny's GitHub Stats" height="155" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sun2004ny&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="155" />
-
-<br />
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=sun2004ny&theme=tokyonight&hide_border=true" alt="GitHub Streak" height="150" />
-
-</div>
 
 ---
 
