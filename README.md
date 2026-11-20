@@ -1,50 +1,20 @@
-<div align="center">
+![Sunny More Header](assets/header.svg)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=7" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/light.svg?v=7" />
-  <img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=7" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
-</picture>
+![Tech Stack](assets/tech-stack.svg)
 
-<br /><br />
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-161b22?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sunny-more)
+[![GitHub](https://img.shields.io/badge/GitHub-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sun2004ny)
+[![Email](https://img.shields.io/badge/Email-161b22?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sunny250504@gmail.com)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-1d4ed8?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sunnymore)
-[![Email](https://img.shields.io/badge/Email-020617?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sunny260604@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-020617?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sun2004ny)
+Currently exploring and working with:
 
-</div>
+* **LLM Integration:** OpenAI API, Gemini API and other LLM providers
+* **AI-Assisted Development:** Claude Code, Cursor and prompt engineering
+* **RAG Systems:** Retrieval-Augmented Generation, embeddings and vector search with pgvector
+* **Backend Integration:** Building APIs and connecting AI capabilities with full-stack applications
 
----
+My current focus is learning how to design and integrate agentic AI systems into practical full-stack applications.
 
-### ⚡ Quick Overview
+### GitHub Contributions
 
-- 🎓 **Academics:** Final-year B.Tech in Artificial Intelligence & Data Science at **Sigma University** (CGPA: **9.22 / 10**, Class of 2027).
-- 💼 **Production Experience:** Spent **9 months as a Web Development Intern** at **Bada Builder Pvt. Ltd.** building an end-to-end real-estate platform deployed on AWS (EC2, S3, RDS).
-- 🧠 **AI/ML Focus:** Designing streaming NLP pipelines (Sentence-BERT, HDBSCAN, FAISS vector search) with automated CI/CD.
-- 📍 **Status:** Based in Vadodara, Gujarat, India · **Open to Full-Stack Software Engineer & AI/ML Engineer roles**.
-
----
-
-### 🚀 Featured Projects
-
-| Project | Description | Tech Stack | Links |
-|---|---|---|---|
-| **🏢 Bada Builder** | Real-estate platform with 3D WebGL unit views, 5 RBAC dashboards, Razorpay & AWS deployment. | `React 19` `Node.js` `PostgreSQL` `AWS` `Three.js` | [Live Site](https://bada-builder-frontend.vercel.app) · [Frontend](https://github.com/sun2004ny/bada-builder-frontend) · [Backend](https://github.com/sun2004ny/bada-builder-backend) |
-| **📡 TrendRadar-AI** | Streaming NLP topic detection engine on 8,784 Reddit posts with 58 automated tests and CI. | `Python` `Sentence-BERT` `FAISS` `pytest` `Docker` | [Repository](https://github.com/sun2004ny/TrendRadar-AI) |
-| **🛍️ RadiantWears** | Full-stack clothing e-commerce store with admin inventory management and order tracking CRM. | `React` `Node.js` `Neon PostgreSQL` `Tailwind CSS` | [Live Demo](https://radiantwear-puce.vercel.app) · [Repository](https://github.com/sun2004ny/radiantwear) |
-| **🏥 Live Life Rehab** | 49-page responsive wellness portal with localized care programs and appointment booking. | `HTML5` `CSS3` `JavaScript` | [Live Site](https://live-life-rehab.vercel.app) · [Repository](https://github.com/sun2004ny/live-life-rehab) |
-
----
-
-### 🛠️ Core Tech Stack
-
-* **Frontend:** React.js, Vite, Tailwind CSS, Three.js, React Router
-* **Backend & Cloud:** Node.js, Express.js, PostgreSQL (Neon), AWS (EC2, S3, RDS), Socket.io, Docker
-* **AI / ML & NLP:** Python, Sentence-BERT, FAISS Vector Search, HDBSCAN, scikit-learn, Streamlit
-* **Tools & Testing:** Git, GitHub Actions (CI/CD), pytest, Linux, Postman
-
----
-
-<div align="center">
-  <sub>Designed & Built by <strong>Sunny More</strong> · Vadodara, Gujarat, India</sub>
-</div>
+![GitHub Contribution Snake](https://raw.githubusercontent.com/sun2004ny/sun2004ny/output/github-contribution-grid-snake-dark.svg)
