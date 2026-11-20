@@ -6,13 +6,13 @@
       <stop offset="100%" stop-color="#071413" />
     </linearGradient>
 
-    <!-- Subtle Mint Glow Filter for Title -->
-    <filter id="mint-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#34d399" flood-opacity="0.6" />
+    <!-- Subtle Clean Glow Filter for Title -->
+    <filter id="white-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#ffffff" flood-opacity="0.4" />
     </filter>
 
     <style>
-      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #34d399; letter-spacing: 0.5px; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; letter-spacing: 0.5px; }
       .pill-txt { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; fill: #ffffff; }
     </style>
   </defs>
@@ -20,8 +20,8 @@
   <!-- Container Card: dark emerald-slate background (#0b1918) with glowing emerald-cyan border (#2dd4bf) -->
   <rect x="0.5" y="0.5" width="849" height="154" rx="16" fill="url(#card-bg)" stroke="#2dd4bf" stroke-width="1" />
 
-  <!-- Top-Left Title: Tech Stack in bold glowing mint-cyan (#34d399) -->
-  <text x="32" y="28" class="title" filter="url(#mint-glow)">Tech Stack</text>
+  <!-- Top-Left Title: Tech Stack in Pure White (#ffffff) -->
+  <text x="32" y="28" class="title" filter="url(#white-glow)">Tech Stack</text>
 
   <!-- ==================== ROW 1 PILL BADGES ==================== -->
   <!-- Python -->

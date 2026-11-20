@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=8" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/light.svg?v=8" />
-  <img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=8" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=9" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/light.svg?v=9" />
+  <img src="https://raw.githubusercontent.com/sun2004ny/sun2004ny/main/dark.svg?v=9" alt="Sunny More — Full-Stack Web Architect & AI/ML Developer" width="100%" />
 </picture>
 
 <br /><br />
