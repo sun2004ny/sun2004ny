@@ -21,4 +21,4 @@ My current focus is learning how to design and integrate agentic AI systems into
 
 ### GitHub Contributions
 
-![GitHub Contribution Snake](https://raw.githubusercontent.com/sun2004ny/sun2004ny/output/github-contribution-grid-snake-dark.svg)
+![GitHub Contribution Snake](github-contribution-grid-snake-dark.svg)
